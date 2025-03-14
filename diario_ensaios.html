@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário de Ensaios</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn {
+            padding: 12px 25px; 
+            margin: 10px; 
+            font-size: 18px; 
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+        table {
+            width: 80%; 
+            margin: 20px auto; 
+            border-collapse: collapse; 
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd; 
+            padding: 12px; 
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha um Coral</h1>
+        <button class="btn" onclick="showTable('reitoria')">Coral da Reitoria</button>
+        <button class="btn" onclick="showTable('ia')">Coral do Instituto de Artes</button>
+    </div>
+
+    <div id="reitoria" class="hidden content">
+        <h2>Diário de Ensaios - Coral da Reitoria</h2>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Conteúdo Ensaiado</th>
+            </tr>
+            <tr>
+                <td>10/03/2025</td>
+                <td>- Apresentação do projeto, </br>
+                    - Leitura de "Duo para provérbios brasileiros", </br>
+                    - Leitura de "Lua depois da chuva", <br>
+                    - Leitura do tema de "Quem tudo quer saber, mexerico quer fazer".</td>
+            </tr>
+            <tr>
+                <td>12/03/2025</td>
+                <td>- Apresentação do projeto para quem não tinha ido, </br>
+                    - 2° Leitura de "Duo para provérbios brasileiros" - com elementos expressivos, </br>
+                    - 2° Leitura de "Lua depois da chuva" - com cânone e divisão de vozes no final, <br>
+                    - Leitura do tema de "Quem tudo quer saber, mexerico quer fazer" - até a entrada de contraltos.</td>
+            </tr>
+            <tr>
+                <td>17/03/2025</td>
+                <td> Ouvir os áudios das três músicas que estão no drive </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="ia" class="hidden content">
+        <h2>Diário de Ensaios - Coral do Instituto de Artes</h2>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Conteúdo Ensaiado</th>
+            </tr>
+            <td>11/03/2025</td>
+            <td>- Apresentação do projeto, </br>
+                - Leitura de "Duo para provérbios brasileiros", </br>
+                - Leitura de "Lua depois da chuva", <br>
+                - Leitura do tema de "Quem tudo quer saber, mexerico quer fazer".</td>
+        </tr>
+        <tr>
+            <td>14/03/2025</td>
+            <td> </td>
+        </tr>
+        </table>
+    </div>
+
+    <script>
+        function showTable(id) {
+            document.getElementById('reitoria').classList.add('hidden');
+            document.getElementById('ia').classList.add('hidden');
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
