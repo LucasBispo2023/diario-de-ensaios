@@ -59,6 +59,39 @@
         .content {
             padding: 20px;
         }
+        /* Estilos para os cabeçalhos dos meses */
+        .month-header {
+            background-color: #e6f2ff;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 10px;
+            border-bottom: 2px solid #007BFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .month-header:hover {
+            background-color: #d1e7ff;
+        }
+        /* Ícone para indicar o estado de expansão */
+        .month-header .icon {
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .collapsed .icon {
+            transform: rotate(-90deg);
+        }
+        /* Estilo para a seção de conteúdo do mês */
+        .month-content {
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+        }
+        .collapsed .month-content {
+            max-height: 0;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -70,51 +103,69 @@
 
     <div id="reitoria" class="hidden content">
         <h2>Diário de Ensaios - Coral da Reitoria</h2>
+        
+        <!-- Tabela com seções expansíveis -->
         <table>
             <tr>
                 <th>Data</th>
                 <th>Conteúdo Ensaiado</th>
             </tr>
-            <tr>
+            
+            <!-- Seção de Março -->
+            <tr class="month-section" id="reitoria-marco">
+                <td colspan="2" class="month-header" onclick="toggleMonth('reitoria-marco')">
+                    <span>Março 2025</span>
+                    <span class="icon">▼</span>
+                </td>
+            </tr>
+            <tr class="month-content">
                 <td>10/03/2025</td>
                 <td>- Apresentação do projeto, </br>
                     - Leitura de "Duo para provérbios brasileiros", </br>
                     - Leitura de "Lua depois da chuva", <br>
                     - Leitura do tema de "Quem tudo quer saber, mexerico quer fazer".</td>
             </tr>
-            <tr>
+            <tr class="month-content">
                 <td>12/03/2025</td>
                 <td>- Apresentação do projeto para quem não tinha ido, </br>
                     - 2° Leitura de "Duo para provérbios brasileiros" - com elementos expressivos, </br>
                     - 2° Leitura de "Lua depois da chuva" - com cânone e divisão de vozes no final, <br>
                     - Leitura do tema de "Quem tudo quer saber, mexerico quer fazer" - até a entrada de contraltos.</td>
             </tr>
-            <tr>
+            <tr class="month-content">
                 <td>17/03/2025</td>
-                <td>    - Leitura de aperfeiçoamento de Lua depois da chuva e Duo para Provérbios Brasileiros.</br>
-                        - Quem tudo quer saber - nova estratégia para trabalhar o tema. </td>
+                <td>- Leitura de aperfeiçoamento de Lua depois da chuva e Duo para Provérbios Brasileiros.</br>
+                    - Quem tudo quer saber - nova estratégia para trabalhar o tema.</td>
             </tr>
-            <tr>
+            <tr class="month-content">
                 <td>19/03/2025</td>
-                <td>    - Foco nas primeiras duas páginas de "quem tudo quer saber, mexerico quer fazer". </td>
+                <td>- Foco nas primeiras duas páginas de "quem tudo quer saber, mexerico quer fazer".</td>
             </tr>
-            <tr>
+            <tr class="month-content">
                 <td>24/03/2025</td>
-                <td>    - Conclusão do duo para provérbios brasileiros. </td>
+                <td>- Conclusão do duo para provérbios brasileiros.</td>
             </tr>
-            <tr>
+            <tr class="month-content">
                 <td>26/03/2025</td>
-                <td>    - Avanço na leitura de "Quem tudo quer saber, mexerico quer fazer" - Estamos no fim do segundo sistema da página 2. </td>
+                <td>- Avanço na leitura de "Quem tudo quer saber, mexerico quer fazer" - Estamos no fim do segundo sistema da página 2.</td>
             </tr>
-            <tr>
+            <tr class="month-content">
                 <td>31/03/2025</td>
-                <td>    - Não houve avanço no repertório devido a baixa quantidade de pessoas presentes. </td>
+                <td>- Não houve avanço no repertório devido a baixa quantidade de pessoas presentes.</td>
             </tr>
-            <tr>
+            
+            <!-- Seção de Abril -->
+            <tr class="month-section" id="reitoria-abril">
+                <td colspan="2" class="month-header" onclick="toggleMonth('reitoria-abril')">
+                    <span>Abril 2025</span>
+                    <span class="icon">▼</span>
+                </td>
+            </tr>
+            <tr class="month-content">
                 <td>02/04/2025</td>
-                <td>    - Apresentação de repertório que será trabalhado. </br>
+                <td>- Apresentação de repertório que será trabalhado. </br>
                    - Leitura da primeira e início da segunda página de "Tempo Perdido".</br>
-                   - Leitura da primeira parte de "Pescaria".  </td>
+                   - Leitura da primeira parte de "Pescaria".</td>
             </tr>
         </table>
     </div>
@@ -126,52 +177,117 @@
                 <th>Data</th>
                 <th>Conteúdo Ensaiado</th>
             </tr>
-            <td>11/03/2025</td>
-            <td>- Apresentação do projeto, </br>
-                - Leitura de "Duo para provérbios brasileiros", </br>
-                - Leitura de "Lua depois da chuva", <br>
-                - Leitura do tema de "Quem tudo quer saber, mexerico quer fazer".</td>
-        </tr>
-        <tr>
-            <td>14/03/2025</td>
-            <td> - Apresentação do projeto para quem não veio, </br>
-                - Leitura de "Duo para provérbios brasileiros", </br>
-                - Leitura da primeira parte do "Quem tudo quer saber, mexerico quer fazer".</br>
-                - Leitura de "Lua depois da chuva", <br> </td>
-        </tr>
-        <tr>
+            
+            <!-- Seção de Março -->
+            <tr class="month-section" id="ia-marco">
+                <td colspan="2" class="month-header" onclick="toggleMonth('ia-marco')">
+                    <span>Março 2025</span>
+                    <span class="icon">▼</span>
+                </td>
+            </tr>
+            <tr class="month-content">
+                <td>11/03/2025</td>
+                <td>- Apresentação do projeto, </br>
+                    - Leitura de "Duo para provérbios brasileiros", </br>
+                    - Leitura de "Lua depois da chuva", <br>
+                    - Leitura do tema de "Quem tudo quer saber, mexerico quer fazer".</td>
+            </tr>
+            <tr class="month-content">
+                <td>14/03/2025</td>
+                <td>- Apresentação do projeto para quem não veio, </br>
+                    - Leitura de "Duo para provérbios brasileiros", </br>
+                    - Leitura da primeira parte do "Quem tudo quer saber, mexerico quer fazer".</br>
+                    - Leitura de "Lua depois da chuva", <br></td>
+            </tr>
+            <tr class="month-content">
                 <td>17/03/2025</td>
-                <td>    - Leitura de aperfeiçoamento de Lua depois da chuva e Duo para Provérbios Brasileiros.</br>
-                        - Quem tudo quer saber - nova estratégia para trabalhar o tema. </td>
+                <td>- Leitura de aperfeiçoamento de Lua depois da chuva e Duo para Provérbios Brasileiros.</br>
+                    - Quem tudo quer saber - nova estratégia para trabalhar o tema.</td>
             </tr>
-            <tr>
+            <tr class="month-content">
                 <td>21/03/2025</td>
-                <td>    - Foco nas primeiras duas páginas de "quem tudo quer saber, mexerico quer fazer". </br>
-                        - Finalizamos o duo para proverbios brasileiro. </td>
+                <td>- Foco nas primeiras duas páginas de "quem tudo quer saber, mexerico quer fazer". </br>
+                    - Finalizamos o duo para proverbios brasileiro.</td>
             </tr>
-            <tr>
+            <tr class="month-content">
                 <td>25/03/2025</td>
-                <td>    - "Quem tudo quer saber, mexerico quer fazer" foi o foco. Lemos até o segundo compasso da página 2. </td>
+                <td>- "Quem tudo quer saber, mexerico quer fazer" foi o foco. Lemos até o segundo compasso da página 2.</td>
             </tr>
-            <tr>
+            <tr class="month-content">
                 <td>28/03/2025</td>
-                <td>    - Encontro cancelado devido a colação de grau. O mesmo será reposto perto da data do encontro coral como ensaio extra. </td>
+                <td>- Encontro cancelado devido a colação de grau. O mesmo será reposto perto da data do encontro coral como ensaio extra.</td>
             </tr>
-            <tr>
+            
+            <!-- Seção de Abril -->
+            <tr class="month-section" id="ia-abril">
+                <td colspan="2" class="month-header" onclick="toggleMonth('ia-abril')">
+                    <span>Abril 2025</span>
+                    <span class="icon">▼</span>
+                </td>
+            </tr>
+            <tr class="month-content">
                 <td>01/04/2025</td>
-                <td>    - Apresentação de repertório que será trabalhado. </br>
+                <td>- Apresentação de repertório que será trabalhado. </br>
                    - Leitura da primeira e início da segunda página de "Tempo Perdido".</br>
-                   - Leitura da primeira parte de "Pescaria". </td>
+                   - Leitura da primeira parte de "Pescaria".</td>
             </tr>
         </table>
     </div>
 
     <script>
+        // Função para mostrar a tabela selecionada
         function showTable(id) {
             document.getElementById('reitoria').classList.add('hidden');
             document.getElementById('ia').classList.add('hidden');
             document.getElementById(id).classList.remove('hidden');
+            
+            // Expandir todos os meses por padrão quando a tabela é mostrada
+            var sections = document.querySelectorAll('#' + id + ' .month-section');
+            sections.forEach(function(section) {
+                expandMonth(section.id);
+            });
         }
+        
+        // Função para alternar a expansão/recolhimento de um mês
+        function toggleMonth(monthId) {
+            var section = document.getElementById(monthId);
+            if (section.classList.contains('collapsed')) {
+                expandMonth(monthId);
+            } else {
+                collapseMonth(monthId);
+            }
+        }
+        
+        // Função para expandir um mês
+        function expandMonth(monthId) {
+            var section = document.getElementById(monthId);
+            section.classList.remove('collapsed');
+            
+            // Mostrar todos os conteúdos do mês
+            var nextSibling = section.nextElementSibling;
+            while (nextSibling && nextSibling.classList.contains('month-content')) {
+                nextSibling.style.display = 'table-row';
+                nextSibling = nextSibling.nextElementSibling;
+            }
+        }
+        
+        // Função para recolher um mês
+        function collapseMonth(monthId) {
+            var section = document.getElementById(monthId);
+            section.classList.add('collapsed');
+            
+            // Esconder todos os conteúdos do mês
+            var nextSibling = section.nextElementSibling;
+            while (nextSibling && nextSibling.classList.contains('month-content')) {
+                nextSibling.style.display = 'none';
+                nextSibling = nextSibling.nextElementSibling;
+            }
+        }
+        
+        // Inicializar: Expandir todos os meses ao carregar a página
+        window.onload = function() {
+            // Não mostrar nenhuma tabela até que um botão seja clicado
+        };
     </script>
 </body>
 </html>
